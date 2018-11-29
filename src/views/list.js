@@ -15,7 +15,8 @@ export default class extends Component {
                 { name: 'Dirt', amount: 2 }
             ]
            this.setState({
-               data: fakeresults
+               data: fakeresults,
+               loading: false
            })
         }, 2000)
     }
