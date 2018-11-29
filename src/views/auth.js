@@ -21,7 +21,7 @@ export default class extends Component {
         this.setState({ loading: true })
         
         const data = {
-            email: this.state.email,
+            user: this.state.email,
             company: this.state.company,
             password: this.state.password
         }
