@@ -1,32 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Auth from './views/auth'
+import List from './views/list'
 
-const Index = () => <h2>Home</h2>;
-const About = () => <h2>About</h2>;
-const Users = () => <h2>Users</h2>;
+export default class extends Component {
+  render () {
+    const user = JSON.parse(localStorage.getItem('user'))
 
-const AppRouter = () => (
-  <Router>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about/">About</Link>
-          </li>
-          <li>
-            <Link to="/users/">Users</Link>
-          </li>
-        </ul>
-      </nav>
+    return (
+      <Router>
+        <div>
+          {
+            user ?
+            <Route path="/" component={List} /> :
+            <Route path="/" exact component={Auth} />
 
-      <Route path="/" exact component={Index} />
-      <Route path="/about/" component={About} />
-      <Route path="/users/" component={Users} />
-    </div>
-  </Router>
-);
-
-export default AppRouter;
+          }
+        </div>
+      </Router>
+    )
+  }
+}
