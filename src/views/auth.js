@@ -58,14 +58,14 @@ export default class extends Component {
     }
 
     render () {
-        const { email, password, loading } = this.state
+        const { email, password, company, loading } = this.state
 
         return (
             <div className='row center'>
                 <h2>Login</h2>
                 <input placeholder='Email' id='email' type='email' onChange={this.handleChange} value={email}/>
                 <br/>
-                <input placeholder='Company' id='company' type='text' onChange={this.handleChange} value={email}/>
+                <input placeholder='Company' id='company' type='text' onChange={this.handleChange} value={company}/>
                 <br/>
                 <input placeholder='Password' id='password' type='password' onChange={this.handleChange} value={password}/>
                 <br/>
